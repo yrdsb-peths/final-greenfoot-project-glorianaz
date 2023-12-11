@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * This is the title screen of the Watermelon game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Gloriana Zheng 
+ * @version December 2023
  */
 public class TitleScreen extends World
 {
@@ -21,6 +21,16 @@ public class TitleScreen extends World
         
         addObject(titleLabel, getWidth()/2, getHeight()/2 - 60);
         prepare();
+    }
+    
+    public void act()
+    {
+        // Stars the game when user presses space bar 
+        if(Greenfoot.isKeyDown("space"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }  
     }
     
     private void prepare()
