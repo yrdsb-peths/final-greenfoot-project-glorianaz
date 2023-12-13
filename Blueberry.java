@@ -28,7 +28,7 @@ public class Blueberry extends Actor
             int topBoundary = 20;
             int bottomBoundary = getWorld().getHeight() - 40;
         
-            setLocation(x, y + speed);
+            setLocation(getX(), getY() + speed);
         
             if(x < leftBoundary)
             {
@@ -45,6 +45,7 @@ public class Blueberry extends Actor
             {
                 setLocation(x,bottomBoundary);
             }
+            
             
             if(getY() >= getWorld().getHeight() - 1)
             {

@@ -23,7 +23,7 @@ public class MyWorld extends World
     public void createBlueberry(int x, int y)
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
-        if(mouse != null && x >= 0 && x < getWidth() && y >= 0 && y < getHeight())
+        if(x >= 0 && x < getWidth())
         {
             Blueberry blueberry = new Blueberry();
             addObject(blueberry, x, 0);
@@ -35,15 +35,9 @@ public class MyWorld extends World
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
         
-        if(Greenfoot.mousePressed(null))
+        if (Greenfoot.mousePressed(null) && mouse != null)
         {
-            removeObjects(getObjects(Blueberry.class));
-        }
-        
-        
-        if (Greenfoot.mousePressed(null))
-        {
-            createBlueberry(mouse.getX() , mouse.getY());
+            createBlueberry(mouse.getX() , 0);
         }
         
     }
