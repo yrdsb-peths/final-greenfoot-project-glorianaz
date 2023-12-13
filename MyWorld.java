@@ -35,6 +35,7 @@ public class MyWorld extends World
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
         
+        // creating blueberry that appears at the top of the screen 
         if (Greenfoot.mousePressed(null) && mouse != null)
         {
             createBlueberry(mouse.getX() , 0);
