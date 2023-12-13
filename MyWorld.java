@@ -17,5 +17,20 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        
+        createBlueberry();
+    }
+    
+    
+    MouseInfo mouseInfo = Greenfoot.getMouseInfo();
+    public void createBlueberry()
+    {
+        Blueberry blueberry = new Blueberry();
+         if(mouseInfo != null)
+        {
+            int x = mouseInfo.getX();
+            int y = mouseInfo.getY();
+            addObject(blueberry, x, y);
+        }
     }
 }
