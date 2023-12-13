@@ -23,10 +23,10 @@ public class Blueberry extends Actor
             int x = mouseInfo.getX();
             int y = mouseInfo.getY();
             
-            int leftBoundary = 0;
-            int rightBoundary = getWorld().getWidth() - 1;
-            int topBoundary = 0;
-            int bottomBoundary = getWorld().getHeight() - 1;
+            int leftBoundary = 20;
+            int rightBoundary = getWorld().getWidth() - 20;
+            int topBoundary = 20;
+            int bottomBoundary = getWorld().getHeight() - 40;
         
             setLocation(x, y + speed);
         
@@ -44,6 +44,11 @@ public class Blueberry extends Actor
             }else if(y > bottomBoundary)
             {
                 setLocation(x,bottomBoundary);
+            }
+            
+            if(getY() >= getWorld().getHeight() - 1)
+            {
+                getWorld().removeObject(this);
             }
         } 
     }

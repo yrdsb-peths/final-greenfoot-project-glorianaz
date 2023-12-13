@@ -34,9 +34,19 @@ public class MyWorld extends World
     public void act()
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
-        if(mouse != null && Greenfoot.mousePressed(null))
+        
+        if(Greenfoot.mousePressed(null))
         {
-            createBlueberry(mouse.getX(), mouse.getY());
+            removeObjects(getObjects(Blueberry.class));
         }
+        
+        
+        if (Greenfoot.mousePressed(null))
+        {
+            createBlueberry(mouse.getX() , mouse.getY());
+        }
+        
     }
+    
+    
 }
