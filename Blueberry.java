@@ -47,8 +47,10 @@ public class Blueberry extends Actor
             }
             
             
-            if(getY() >= getWorld().getHeight() - 1)
+            if(getY() >= getWorld().getHeight() - 40)
             {
+                
+                
                 setLocation(getX(), getWorld().getHeight() - 40);
                 speed = 0;
             }
