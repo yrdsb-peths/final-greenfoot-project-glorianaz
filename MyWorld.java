@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Gloriana Zheng
+ * @version December 2023
  */
 public class MyWorld extends World
 {
@@ -20,16 +20,23 @@ public class MyWorld extends World
         
     }
     
-    
-    MouseInfo mouseInfo = Greenfoot.getMouseInfo();
-    public void createBlueberry()
+    public void createBlueberry(int x, int y)
     {
-        Blueberry blueberry = new Blueberry();
-         if(mouseInfo != null)
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if(mouse != null && x >= 0 && x < getWidth() && y >= 0 && y < getHeight())
         {
-            int x = mouseInfo.getX();
-            int y = mouseInfo.getY();
-            addObject(blueberry, x, y);
+            Blueberry blueberry = new Blueberry();
+            addObject(blueberry, x, 0);
+            blueberry.setSpeed(1);
+        }
+    }
+    
+    public void act()
+    {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if(mouse != null && Greenfoot.mousePressed(null))
+        {
+            createBlueberry(mouse.getX(), mouse.getY());
         }
     }
 }
