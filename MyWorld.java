@@ -31,7 +31,10 @@ public class MyWorld extends World
         }
     }
     
-    public void create
+    public void createOrange(int x, int y)
+    {
+        
+    }
     
     public void act()
     {
