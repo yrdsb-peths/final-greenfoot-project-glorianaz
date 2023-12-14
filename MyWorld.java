@@ -31,6 +31,8 @@ public class MyWorld extends World
         }
     }
     
+    public void create
+    
     public void act()
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -40,6 +42,7 @@ public class MyWorld extends World
         {
             createBlueberry(mouse.getX() , 0);
         }
+        
         
     }
     

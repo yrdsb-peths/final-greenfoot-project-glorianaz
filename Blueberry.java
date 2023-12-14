@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Blueberry extends Actor
 {
-    int speed = 1;
+    int speed = 8;
     
     /**
      * Act - do whatever the Blueberry wants to do. This method is called whenever
@@ -46,6 +46,7 @@ public class Blueberry extends Actor
                 setLocation(x,bottomBoundary);
             }
             
+            touch();
             
             if(getY() >= getWorld().getHeight() - 40)
             {
@@ -61,6 +62,14 @@ public class Blueberry extends Actor
     {
         speed = spd;
     }
-
+    
+    public void touch()
+    {
+        if(isTouching(Blueberry.class))
+        {
+            setLocation(getX(), getY() - 10);
+            speed = 0;
+        }
+    }    
     
 }
