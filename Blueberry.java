@@ -67,8 +67,13 @@ public class Blueberry extends Actor
     {
         if(isTouching(Blueberry.class))
         {
-            setLocation(getX(), getY());
+            int x = getX();
+            int y = getY();
+            setLocation(x, y);
             speed = 0;
+            removeTouching(Blueberry.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createStrawberry(x, y);
         }
     }    
     

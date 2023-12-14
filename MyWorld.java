@@ -31,6 +31,12 @@ public class MyWorld extends World
         }
     }
     
+    public void createStrawberry(int x, int y)
+    {
+        Strawberry strawberry  = new Strawberry();
+        addObject(strawberry, x, y);
+    }
+    
     public void createOrange(int x, int y)
     {
         
