@@ -27,7 +27,7 @@ public class MyWorld extends World
         {
             Blueberry blueberry = new Blueberry();
             addObject(blueberry, x, 0);
-            blueberry.setSpeed(1);
+            blueberry.setSpeed(10);
         }
     }
     

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Blueberry extends Actor
 {
-    int speed = 10;
+    int speed = 200;
     
     /**
      * Act - do whatever the Blueberry wants to do. This method is called whenever
