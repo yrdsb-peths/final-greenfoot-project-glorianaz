@@ -31,6 +31,12 @@ public class MyWorld extends World
         }
     }
     
+    public void dropFruit()
+    {
+        // Randomizer random = new Randomizer();
+        
+    }
+    
     public void createStrawberry(int x, int y)
     {
         Strawberry strawberry  = new Strawberry();

@@ -63,17 +63,29 @@ public class Blueberry extends Actor
         speed = spd;
     }
     
+    
     public void touch()
     {
+        
         if(isTouching(Blueberry.class))
         {
-            int x = getX();
-            int y = getY();
-            setLocation(x, y);
-            speed = 0;
-            removeTouching(Blueberry.class);
-            MyWorld world = (MyWorld) getWorld();
-            world.createStrawberry(x, y);
+            int touchingBlueberriesCount = 0;
+            
+            for (Object obj : getIntersectingObjects(Blueberry.class)) 
+            {
+            touchingBlueberriesCount++;
+            }
+
+            if(touchingBlueberriesCount == 1)
+            {
+                int x = getX();
+                int y = getY();
+                setLocation(x, y);
+                speed = 0;
+                removeTouching(Blueberry.class);
+                MyWorld world = (MyWorld) getWorld();
+                world.createStrawberry(x, y);
+            }
         }
     }    
     
