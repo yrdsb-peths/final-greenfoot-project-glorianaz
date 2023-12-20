@@ -67,7 +67,7 @@ public class Blueberry extends Actor
     public void touch()
     {
         
-        if(isTouching(Blueberry.class))
+        if(isTouching(Blueberry.class) && !isTouching(Strawberry.class))
         {
             int touchingBlueberriesCount = 0;
             
@@ -84,8 +84,16 @@ public class Blueberry extends Actor
                 speed = 0;
                 removeTouching(Blueberry.class);
                 MyWorld world = (MyWorld) getWorld();
-                world.createStrawberry(x, y);
+                world.createStrawberry(x, y + 5);
             }
+        }
+        
+        if(isTouching(Strawberry.class))
+        {
+            int x = getX();
+            int y = getY();
+            setLocation(x, y);
+            speed = 0;
         }
     }    
     

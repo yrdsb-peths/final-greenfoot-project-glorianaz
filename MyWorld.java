@@ -45,7 +45,8 @@ public class MyWorld extends World
     
     public void createOrange(int x, int y)
     {
-        
+        Orange orange = new Orange();
+        addObject(orange, x, y);
     }
     
     public void act()
