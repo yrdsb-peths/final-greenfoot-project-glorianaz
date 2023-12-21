@@ -49,6 +49,12 @@ public class MyWorld extends World
         addObject(orange, x, y);
     }
     
+    public void createMelon(int x, int y)
+    {
+        Melon melon = new Melon();
+        addObject(melon, x, y);
+    }
+    
     public void act()
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
