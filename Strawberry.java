@@ -32,12 +32,16 @@ public class Strawberry extends Actor
             int y = getY();
             setLocation(x, y);
             speed = 0;
-            world.createOrange(x, y + 5);   
-         
-
-            if(isTouching(Strawberry.class))
+            world.createOrange(x, y + 5); 
+            if(isTouching(Orange.class))
             {
                 removeTouching(Strawberry.class);
+         
+
+                if(isTouching(Strawberry.class))
+                {
+                removeTouching(Strawberry.class);
+                }
             }
         }
         
