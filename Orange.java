@@ -16,4 +16,8 @@ public class Orange extends Actor
     {
         // Add your action code here.
     }
+    
+    int speed = 200;
+    
+    
 }
