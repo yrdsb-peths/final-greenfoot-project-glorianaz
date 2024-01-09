@@ -15,9 +15,43 @@ public class Orange extends Actor
     public void act()
     {
         // Add your action code here.
+        touch();
     }
     
     int speed = 200;
     
+    public void touch()
+    {
+         if(isTouching(Orange.class))
+        {
+            
+            removeTouching(Orange.class);
+            MyWorld world = (MyWorld) getWorld();
+            int x = getX();
+            int y = getY();
+            setLocation(x, y);
+            speed = 0;
+            world.createMelon(x, y + 5); 
+            if(isTouching(Melon.class))
+            {
+                removeTouching(Orange.class);
+         
+
+                if(isTouching(Orange .class))
+                {
+                removeTouching(Orange.class);
+                }
+            }
+        }
+        
+        if(isTouching(Strawberry.class))
+        {
+            int x = getX();
+            int y = getY();
+            setLocation(x, y);
+            speed = 0;
+        }
+        
+    }
     
 }
