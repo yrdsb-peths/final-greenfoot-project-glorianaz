@@ -20,13 +20,8 @@ public class Strawberry extends Actor
         // Add your action code here.
         touch();
         
-        setLocation(getX(), getY() + speed);
-
-        if (getY() >= getWorld().getHeight() - 40) 
-        {
-        setLocation(getX(), getWorld().getHeight() - 60);
-        speed = 0;
-        }
+        moveDown();
+      
         
         if(Greenfoot.mousePressed(this) && !isFalling)
         {
@@ -34,10 +29,7 @@ public class Strawberry extends Actor
             setSpeed(speed);
         }
         
-        if(isFalling)
-        {
-            moveDown();
-        }
+        
     }
     
     public void moveDown()

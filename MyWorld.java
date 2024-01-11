@@ -67,14 +67,13 @@ public class MyWorld extends World
         addObject(melon, x, y - 30);
      
     }
-        
       
     
     public void act()
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
         
-        // creating blueberry that appears at the top of the screen 
+        // creating random blueberry or strawberry that appears at the top of the screen 
         if (Greenfoot.mousePressed(null) && mouse != null)
         {
             
