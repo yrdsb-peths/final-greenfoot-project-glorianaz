@@ -63,7 +63,12 @@ public class Strawberry extends Actor
         if(isTouching(Strawberry.class) && !touch)
         {
             int touchingStrawberriesCount = getIntersectingObjects(Strawberry.class).size();
-            removeTouching(Strawberry.class);
+            
+            while(isTouching(Strawberry.class))
+            {
+                removeTouching(Strawberry.class);
+            }
+            
             
             int x = getX();
             int y = getY();

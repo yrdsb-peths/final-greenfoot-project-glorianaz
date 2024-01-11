@@ -34,7 +34,11 @@ public class Orange extends Actor
             setLocation(x, y);
             speed = 0;
             
-            removeTouching(Orange.class);
+            while(isTouching(Orange.class))
+            {
+                removeTouching(Orange.class);
+            }
+            
             world.createMelon(x, y);
         
             
