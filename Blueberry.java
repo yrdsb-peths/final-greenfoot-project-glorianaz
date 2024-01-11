@@ -58,9 +58,10 @@ public class Blueberry extends Actor
         } 
     }
     
-    public void setSpeed(int spd)
+    public int setSpeed(int spd)
     {
         speed = spd;
+        return speed;
     }
     
     
@@ -69,12 +70,8 @@ public class Blueberry extends Actor
         
         if(isTouching(Blueberry.class) && !isTouching(Strawberry.class))
         {
-            int touchingBlueberriesCount = 0;
+            int touchingBlueberriesCount =  getIntersectingObjects(Blueberry.class).size();
             
-            for (Object obj : getIntersectingObjects(Blueberry.class)) 
-            {
-            touchingBlueberriesCount++;
-            }
 
             if(touchingBlueberriesCount == 1)
             {

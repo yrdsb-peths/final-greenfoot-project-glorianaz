@@ -18,7 +18,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        
+        watermelonCreated = false;
         
     }
     
@@ -28,7 +28,7 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("GAME OVER", 100);
-        
+        addObject(gameOverLabel, getWidth() / 2, getHeight() / 2);
         
     }
     
@@ -60,11 +60,21 @@ public class MyWorld extends World
         Orange orange = new Orange();
         addObject(orange, x, y);
     }
+   
+    public boolean watermelonCreated = false;
+    public boolean isWatermelonCreated() {
+        return watermelonCreated;
+    }
     
     public void createMelon(int x, int y)
     {
-        Melon melon = new Melon();
-        addObject(melon, x, y);
+        if (!watermelonCreated) {
+            Melon melon = new Melon();
+            addObject(melon, x, y - 30);
+            watermelonCreated = true;
+        }
+        
+      
     }
     
     public void act()

@@ -19,30 +19,26 @@ public class Strawberry extends Actor
     }
     
     int speed = 200;
+    private boolean touch = false;
     
     public void touch()
     {
         
-        if(isTouching(Strawberry.class))
+        if(isTouching(Strawberry.class) && !touch)
         {
-            
+            int touchingStrawberriesCount = getIntersectingObjects(Strawberry.class).size();
             removeTouching(Strawberry.class);
-            MyWorld world = (MyWorld) getWorld();
+            
             int x = getX();
             int y = getY();
             setLocation(x, y);
             speed = 0;
+                
+            MyWorld world = (MyWorld) getWorld();
             world.createOrange(x, y + 5); 
-            if(isTouching(Orange.class))
-            {
-                removeTouching(Strawberry.class);
-         
+                
+            touch = true;
 
-                if(isTouching(Strawberry.class))
-                {
-                removeTouching(Strawberry.class);
-                }
-            }
         }
         
         if(isTouching(Blueberry.class))
@@ -52,5 +48,7 @@ public class Strawberry extends Actor
             setLocation(x, y);
             speed = 0;
         }
+        
     }
+   
 }

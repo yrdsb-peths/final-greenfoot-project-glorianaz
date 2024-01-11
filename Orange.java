@@ -20,6 +20,9 @@ public class Orange extends Actor
     
     int speed = 200;
     
+    
+
+    
     public void touch()
     {
          if(isTouching(Orange.class))
@@ -31,16 +34,14 @@ public class Orange extends Actor
             int y = getY();
             setLocation(x, y);
             speed = 0;
-            world.createMelon(x, y + 5); 
+            
+            world.createMelon(x, y - 30);
+            
             if(isTouching(Melon.class))
             {
                 removeTouching(Orange.class);
-         
-
-                if(isTouching(Orange .class))
-                {
-                removeTouching(Orange.class);
-                }
+                
+                
             }
         }
         
@@ -50,6 +51,7 @@ public class Orange extends Actor
             int y = getY();
             setLocation(x, y);
             speed = 0;
+       
         }
         
     }
