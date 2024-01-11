@@ -80,8 +80,9 @@ public class Blueberry extends Actor
                 setLocation(x, y);
                 speed = 0;
                 removeTouching(Blueberry.class);
+                
                 MyWorld world = (MyWorld) getWorld();
-                world.createStrawberry(x, y + 5);
+                world.createStrawberry(x, y + 7);
             }
         }
         

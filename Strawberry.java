@@ -35,7 +35,7 @@ public class Strawberry extends Actor
             speed = 0;
                 
             MyWorld world = (MyWorld) getWorld();
-            world.createOrange(x, y + 5); 
+            world.createOrange(x, y-2); 
                 
             touch = true;
 

@@ -21,50 +21,7 @@ public class Melon extends Actor
     
     public void touch()
     {
-        
-        if(isTouching(Orange.class))
-        {
-            
-            removeTouching(Orange.class);
-            MyWorld world = (MyWorld) getWorld();
-            int x = getX();
-            int y = getY();
-            setLocation(x, y);
-            speed = 0;
-            world.createMelon(x, y + 5); 
-            if(isTouching(Melon.class))
-            {
-                removeTouching(Orange.class);
-                if(isTouching(Orange.class))
-                {
-                removeTouching(Orange.class);
-                }
-            }
-
-        }
-        
-        if(isTouching(Blueberry.class))
-        {
-            int x = getX();
-            int y = getY();
-            setLocation(x, y);
-            speed = 0;
-        }
-        
-        if(isTouching(Strawberry.class))
-        {
-            int x = getX();
-            int y = getY();
-            setLocation(x, y);
-            speed = 0;
-        }
-        
-        if(isTouching(Orange.class))
-        {
-            int x = getX();
-            int y = getY();
-            setLocation(x, y);
-            speed = 0;
-        }
     }
+        
+   
 }

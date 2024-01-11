@@ -18,7 +18,6 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        watermelonCreated = false;
         
     }
     
@@ -43,12 +42,7 @@ public class MyWorld extends World
         }
     }
     
-    public void dropFruit()
-    {
-        // Randomizer random = new Randomizer();
-        
-    }
-    
+
     public void createStrawberry(int x, int y)
     {
         Strawberry strawberry  = new Strawberry();
@@ -61,21 +55,15 @@ public class MyWorld extends World
         addObject(orange, x, y);
     }
    
-    public boolean watermelonCreated = false;
-    public boolean isWatermelonCreated() {
-        return watermelonCreated;
-    }
     
     public void createMelon(int x, int y)
     {
-        if (!watermelonCreated) {
-            Melon melon = new Melon();
-            addObject(melon, x, y - 30);
-            watermelonCreated = true;
-        }
+        Melon melon = new Melon();
+        addObject(melon, x, y - 30);
+     
+    }
         
       
-    }
     
     public void act()
     {
