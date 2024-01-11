@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Blueberry extends Actor
 {
-    int speed = 200;
+    int speed = 100;
     
     /**
      * Act - do whatever the Blueberry wants to do. This method is called whenever
@@ -75,11 +75,17 @@ public class Blueberry extends Actor
 
             if(touchingBlueberriesCount == 1)
             {
+                // remove touching blueberry
                 int x = getX();
                 int y = getY();
                 setLocation(x, y);
                 speed = 0;
-                removeTouching(Blueberry.class);
+                
+                while(isTouching(Blueberry.class))
+                {
+                    removeTouching(Blueberry.class);
+                }
+                
                 
                 MyWorld world = (MyWorld) getWorld();
                 world.createStrawberry(x, y + 7);

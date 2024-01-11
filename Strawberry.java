@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Strawberry extends Actor
 {
+    int speed = 200;
+    private boolean touch = false;
+    private boolean isFalling = false;
     /**
      * Act - do whatever the Strawberry wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,10 +19,43 @@ public class Strawberry extends Actor
     {
         // Add your action code here.
         touch();
+        
+        setLocation(getX(), getY() + speed);
+
+        if (getY() >= getWorld().getHeight() - 40) 
+        {
+        setLocation(getX(), getWorld().getHeight() - 60);
+        speed = 0;
+        }
+        
+        if(Greenfoot.mousePressed(this) && !isFalling)
+        {
+            isFalling = true;
+            setSpeed(speed);
+        }
+        
+        if(isFalling)
+        {
+            moveDown();
+        }
     }
     
-    int speed = 200;
-    private boolean touch = false;
+    public void moveDown()
+    {
+        setLocation(getX(), getY() + speed);
+        
+        if(getY() >= getWorld().getHeight() - 40 || isTouching(Blueberry.class) || isTouching(Melon.class) || isTouching(Orange.class))
+        {
+            isFalling = false;
+            speed = 0;
+        }
+    }
+    
+    public int setSpeed(int spd)
+    {
+        speed = spd;
+        return speed;
+    }
     
     public void touch()
     {

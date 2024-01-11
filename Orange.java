@@ -28,14 +28,15 @@ public class Orange extends Actor
          if(isTouching(Orange.class))
         {
             
-            removeTouching(Orange.class);
             MyWorld world = (MyWorld) getWorld();
             int x = getX();
             int y = getY();
             setLocation(x, y);
             speed = 0;
             
-            world.createMelon(x, y - 30);
+            removeTouching(Orange.class);
+            world.createMelon(x, y);
+        
             
             if(isTouching(Melon.class))
             {

@@ -31,9 +31,10 @@ public class MyWorld extends World
         
     }
     
+    
     public void createBlueberry(int x, int y)
     {
-        MouseInfo mouse = Greenfoot.getMouseInfo();
+
         if(x >= 0 && x < getWidth())
         {
             Blueberry blueberry = new Blueberry();
@@ -45,8 +46,12 @@ public class MyWorld extends World
 
     public void createStrawberry(int x, int y)
     {
-        Strawberry strawberry  = new Strawberry();
-        addObject(strawberry, x, y);
+        if(x >= 0 && x < getWidth())
+        {
+            Strawberry strawberry  = new Strawberry();
+            addObject(strawberry, x, y);
+            strawberry.setSpeed(10);
+        }
     }
     
     public void createOrange(int x, int y)
@@ -72,7 +77,18 @@ public class MyWorld extends World
         // creating blueberry that appears at the top of the screen 
         if (Greenfoot.mousePressed(null) && mouse != null)
         {
-            createBlueberry(mouse.getX() , 0);
+            
+            
+            int random = Greenfoot.getRandomNumber(2);
+        
+            if(random == 0)
+            {
+                createStrawberry(mouse.getX(), 0);
+            }
+            else 
+            {
+                createBlueberry(mouse.getX(), 0);
+            }
         }
         
         
