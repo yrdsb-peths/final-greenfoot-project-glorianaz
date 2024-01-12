@@ -13,13 +13,18 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, getWidth()/2 - 250, getHeight() - 90);
         
+        setPaintOrder(Label.class, Melon.class, Orange.class, Strawberry.class, Blueberry.class);
         
     }
+    Label scoreLabel;
     
     /*
      * End the game and draw game over
@@ -27,7 +32,7 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("GAME OVER", 100);
-        addObject(gameOverLabel, getWidth() / 2, getHeight() / 2);
+        
         
     }
     
@@ -61,13 +66,16 @@ public class MyWorld extends World
     }
    
     
+    public int score = 0;
     public void createMelon(int x, int y)
     {
         Melon melon = new Melon();
         addObject(melon, x, y - 30);
+        
+        score++;
+        scoreLabel.setValue(score);
      
     }
-      
     
     
     
