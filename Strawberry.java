@@ -22,13 +22,13 @@ public class Strawberry extends Actor
         
         moveDown();
       
+    
         
-        if(Greenfoot.mousePressed(this) && !isFalling)
+        if(getY() >= getWorld().getHeight() - 40)
         {
-            isFalling = true;
-            setSpeed(speed);
+            setLocation(getX(), getWorld().getHeight() - 60);
+            speed = 0;
         }
-        
         
     }
     
