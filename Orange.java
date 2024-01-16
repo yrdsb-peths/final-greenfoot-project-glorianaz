@@ -34,6 +34,13 @@ public class Orange extends Actor
             setLocation(x, y);
             speed = 0;
             
+            if(y + 5 >= 0 )
+            {
+                
+                world.gameOver();
+                
+            }
+            
             while(isTouching(Orange.class))
             {
                 removeTouching(Orange.class);
@@ -53,7 +60,7 @@ public class Orange extends Actor
         if(isTouching(Strawberry.class))
         {
             int x = getX();
-            int y = getY();
+            int y= getY();
             setLocation(x, y);
             speed = 0;
        

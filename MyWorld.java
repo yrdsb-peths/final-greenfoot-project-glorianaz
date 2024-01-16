@@ -24,22 +24,27 @@ public class MyWorld extends World
         setPaintOrder(Label.class, Melon.class, Orange.class, Strawberry.class, Blueberry.class);
         
     }
+    
     Label scoreLabel;
     
+    private boolean gameIsOver = false;
     /*
      * End the game and draw game over
      */
     public void gameOver()
     {
         Label gameOverLabel = new Label("GAME OVER", 100);
-        
+        addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+        gameIsOver = true;
         
     }
     
     
     public void createBlueberry(int x, int y)
     {
-
+        // doesn't allow to add more fruits when game is over
+        if (gameIsOver) return;
+        
         if(x >= 0 && x < getWidth())
         {
             Blueberry blueberry = new Blueberry();
@@ -51,6 +56,8 @@ public class MyWorld extends World
 
     public void createStrawberry(int x, int y)
     {
+        if (gameIsOver) return;
+        
         if(x >= 0 && x < getWidth())
         {
             Strawberry strawberry  = new Strawberry();
@@ -61,6 +68,8 @@ public class MyWorld extends World
     
     public void createOrange(int x, int y)
     {
+        if (gameIsOver) return;
+        
         Orange orange = new Orange();
         addObject(orange, x, y);
     }
@@ -69,6 +78,8 @@ public class MyWorld extends World
     public int score = 0;
     public void createMelon(int x, int y)
     {
+        if (gameIsOver) return;
+        
         Melon melon = new Melon();
         addObject(melon, x, y - 30);
         
@@ -81,6 +92,9 @@ public class MyWorld extends World
     
     public void act()
     {
+        
+        if (gameIsOver) return;
+        
         MouseInfo mouse = Greenfoot.getMouseInfo();
         
         // creating random blueberry or strawberry that appears at the top of the screen 
@@ -100,6 +114,7 @@ public class MyWorld extends World
             }
         }
         
+    
         
     }
     
