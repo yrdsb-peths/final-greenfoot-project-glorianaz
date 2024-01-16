@@ -9,6 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
 
+    Label scoreLabel;
+    public int score = 0;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,10 +27,7 @@ public class MyWorld extends World
         setPaintOrder(Label.class, Melon.class, Orange.class, Strawberry.class, Blueberry.class);
         
     }
-    
-    Label scoreLabel;
-    Label highScore;
-    public int score = 0;
+
     
     private boolean gameIsOver = false;
     /*
@@ -38,19 +38,12 @@ public class MyWorld extends World
         Label gameOverLabel = new Label("GAME OVER", 100);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
         removeObject(scoreLabel);
-        Label highScoreLabel = new Label("High Score: " + score, 50);
+        Label scoreLabel = new Label("Score: " + score, 50);
+        addObject(scoreLabel, getWidth()/2, getHeight()/2 + 100);
         Label reset = new Label("Press space to restart", 50);
         addObject(reset, getWidth()/2 , getHeight()/2 + 150);
         gameIsOver = true;
         
-        int highScore = 0;
-        if(score > highScore)
-        {
-            highScore = score;
-            removeObject(highScoreLabel);
-            scoreLabel.setValue(score);
-            addObject(highScoreLabel, getWidth()/2, getHeight()/2 + 100);
-        }
         
     }
     
