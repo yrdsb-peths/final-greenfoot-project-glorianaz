@@ -29,7 +29,12 @@ public class Strawberry extends Actor
             setLocation(getX(), getWorld().getHeight() - 60);
             speed = 0;
         }
-        
+
+        if(getY() <= -5)
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
+        }
     }
     
     public void moveDown()
