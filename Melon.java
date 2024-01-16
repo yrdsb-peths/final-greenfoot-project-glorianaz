@@ -19,6 +19,7 @@ public class Melon extends Actor
     {
         // Add your action code here.
         growDissapear();
+        
     }
    
     private void growDissapear()

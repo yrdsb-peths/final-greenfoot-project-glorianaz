@@ -26,6 +26,8 @@ public class MyWorld extends World
     }
     
     Label scoreLabel;
+    Label highScore;
+    public int score = 0;
     
     private boolean gameIsOver = false;
     /*
@@ -35,8 +37,31 @@ public class MyWorld extends World
     {
         Label gameOverLabel = new Label("GAME OVER", 100);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+        removeObject(scoreLabel);
+        Label highScore = new Label("High Score: " + score, 50);
+        addObject(highScore, getWidth()/2, getHeight()/2 +70);
+        Label reset = new Label("Press space to restart", 50);
+        addObject(reset, getWidth()/2 , getHeight()/2 + 130);
         gameIsOver = true;
         
+        
+        int highScore1 = 0;
+        if(score > highScore1)
+        {
+            highScore1 = score;
+            removeObject(highScore);
+            scoreLabel.setValue(score);
+            addObject(highScore, getWidth()/2, getHeight()/2 + 100);
+        }
+        
+        if(gameIsOver)
+        {
+            if(Greenfoot.isKeyDown("space"))
+            {
+                gameIsOver = false;
+                Greenfoot.setWorld(new MyWorld());
+            }
+        }
     }
     
     
@@ -75,7 +100,6 @@ public class MyWorld extends World
     }
    
     
-    public int score = 0;
     public void createMelon(int x, int y)
     {
         if (gameIsOver) return;
@@ -114,8 +138,7 @@ public class MyWorld extends World
             }
         }
         
-    
-        
+       
     }
     
     

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Orange here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Gloriana Zheng
+ * @version January 2024
  */
 public class Orange extends Actor
 {
@@ -34,7 +34,7 @@ public class Orange extends Actor
             setLocation(x, y);
             speed = 0;
             
-            if(y + 5 >= 0 )
+            if(y <= 25 )
             {
                 
                 world.gameOver();
