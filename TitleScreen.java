@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-    Label titleLabel = new Label("Watermelon", 55);
+    Label titleLabel = new Label("WATERMELON!", 55);
     
     /**
      * Constructor for objects of class TitleScreen.
@@ -37,10 +37,16 @@ public class TitleScreen extends World
     {
         Label label1 = new Label("Press Space to Play!", 35);
         addObject(label1,getWidth()/2 + 75, getHeight()/2 - 40);
-        Label label2 = new Label("Combine fruits until it", 30); 
-        Label label3 = new Label("evolves to a WATERMELON", 30);
-        addObject(label2, getWidth()/2 + 75, getHeight()/2 + 10);
+        Label label2 = new Label("Combine fruits to make as ", 30); 
+        Label label3 = new Label("many WATERMELONS", 30);
+        Label label4 = new Label("GAME OVER if the fruits leave the screen!", 25);
+        Label label5 = new Label("Click the screen on where you", 25);
+        Label label6 = new Label("want the fruit to fall", 25);
+        addObject(label2, getWidth()/2 +80, getHeight()/2 + 10);
         addObject(label3, getWidth()/2 + 75, getHeight()/2 + 40 );
+        addObject(label4, getWidth()/2, getHeight()/2 + 150);
+        addObject(label5, getWidth()/2 + 75, getHeight()/2 + 85);
+        addObject(label6, getWidth()/2 +75, getHeight()/2 + 110);
         
         Watermelon watermelon = new Watermelon();
         addObject(watermelon, getWidth()/2 - 190, getHeight()/2 + 20);
