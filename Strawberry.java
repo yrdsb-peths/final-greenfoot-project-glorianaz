@@ -19,9 +19,7 @@ public class Strawberry extends Actor
     {
         // Add your action code here.
         touch();
-        
         moveDown();
-      
     
         
         if(getY() >= getWorld().getHeight() - 40)

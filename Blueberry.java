@@ -18,6 +18,13 @@ public class Blueberry extends Actor
     {
         // Add your action code here.
         MouseInfo mouseInfo = Greenfoot.getMouseInfo();
+        
+        if(getY() <= -5)
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
+        }
+        
         if(mouseInfo != null)
         {
             int x = mouseInfo.getX();
