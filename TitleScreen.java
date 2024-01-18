@@ -39,9 +39,9 @@ public class TitleScreen extends World
         addObject(label1,getWidth()/2, getHeight()/2 - 90);
         Label label2 = new Label("Combine fruits to make as ", 30); 
         Label label3 = new Label("many WATERMELONS", 30);
-        Label label4 = new Label("GAME OVER if the fruits leave the screen!", 30);
+        Label label4 = new Label("GAME OVER if the fruits leave the screen!", 33);
         Label label5 = new Label("Click the screen on where you", 27);
-        Label label6 = new Label("want the fruit to fall", 27);
+        Label label6 = new Label("want the fruit to fall - DON'T SPAM", 27);
         Label label7 = new Label("to save FRUITOPIA", 30);
         addObject(label2, getWidth()/2 +80, getHeight()/2 -40);
         addObject(label3, getWidth()/2 + 75, getHeight()/2 -10);
