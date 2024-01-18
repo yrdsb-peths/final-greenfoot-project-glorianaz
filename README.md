@@ -21,6 +21,10 @@ Very addicting to play to try to combine the fruits together as well as since th
 
 
 **Features
+Makes a sound every time the user gets a watermelon. 
+
+Score: Score goes up every time the user gets a watermelon
+
 
 
 
