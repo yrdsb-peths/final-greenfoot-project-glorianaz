@@ -15,6 +15,7 @@ public class Melon extends Actor
     
     private int grow = 3;
     private int maxSize = 300;
+    GreenfootSound watermelonSound = new GreenfootSound("achievement.mp3");
     public void act()
     {
         // Add your action code here.
@@ -24,6 +25,7 @@ public class Melon extends Actor
    
     private void growDissapear()
     {
+        watermelonSound.play();
         if(getImage().getWidth() < maxSize)
         {
             GreenfootImage image = getImage();

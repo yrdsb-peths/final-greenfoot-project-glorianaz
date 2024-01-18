@@ -19,7 +19,7 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
-        addObject(titleLabel, getWidth()/2, getHeight()/2 - 100);
+        addObject(titleLabel, getWidth()/2, getHeight()/2 - 110);
         prepare();
     }
     
@@ -39,7 +39,7 @@ public class TitleScreen extends World
         addObject(label1,getWidth()/2 + 75, getHeight()/2 - 40);
         Label label2 = new Label("Combine fruits to make as ", 30); 
         Label label3 = new Label("many WATERMELONS", 30);
-        Label label4 = new Label("GAME OVER if the fruits leave the screen!", 25);
+        Label label4 = new Label("GAME OVER if the fruits leave the screen!", 30);
         Label label5 = new Label("Click the screen on where you", 25);
         Label label6 = new Label("want the fruit to fall", 25);
         addObject(label2, getWidth()/2 +80, getHeight()/2 + 10);
