@@ -50,6 +50,7 @@ public class TitleScreen extends World
         addObject(label6, getWidth()/2 +75, getHeight()/2 + 100);
         addObject(label7, getWidth()/2 + 75, getHeight()/2 + 20);
         
+        // This adds the array of the watermelon animation
         Watermelon watermelon = new Watermelon();
         addObject(watermelon, getWidth()/2 - 190, getHeight()/2 + 20);
     }
