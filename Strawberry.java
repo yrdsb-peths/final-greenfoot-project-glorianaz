@@ -21,13 +21,13 @@ public class Strawberry extends Actor
         touch();
         moveDown();
     
-        
         if(getY() >= getWorld().getHeight() - 40)
         {
             setLocation(getX(), getWorld().getHeight() - 60);
             speed = 0;
         }
-
+        
+        // Calling game over when the strawberry is out of screen 
         if(getY() <= -5)
         {
             MyWorld world = (MyWorld) getWorld();
@@ -35,6 +35,8 @@ public class Strawberry extends Actor
         }
     }
     
+    
+    // Moving the strawberry down from the top of the screen when it is randomized in world class  
     public void moveDown()
     {
         setLocation(getX(), getY() + speed);
@@ -52,6 +54,7 @@ public class Strawberry extends Actor
         return speed;
     }
     
+    // When a strawberry touches another strawberry, removes a strawberry and makes an orange
     public void touch()
     {
         
@@ -64,7 +67,6 @@ public class Strawberry extends Actor
                 removeTouching(Strawberry.class);
             }
             
-            
             int x = getX();
             int y = getY();
             setLocation(x, y);
@@ -74,9 +76,9 @@ public class Strawberry extends Actor
             world.createOrange(x, y-2); 
                 
             touch = true;
-
         }
         
+        // Strawberry will sit on top of Blueberry if it lands on it 
         if(isTouching(Blueberry.class))
         {
             int x = getX();

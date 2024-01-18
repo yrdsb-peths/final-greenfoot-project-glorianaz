@@ -3,11 +3,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Watermelon here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Gloriana Zheng 
+ * @version December 2023
  */
 public class Watermelon extends Actor
 {
+    // This is the array displayed on the title screen
     GreenfootImage[] idle = new GreenfootImage[30];
     
     /**
@@ -41,7 +42,6 @@ public class Watermelon extends Actor
     public void act()
     {
         // Add your action code here.
-        // Animate the Watermelon
         animateWatermelon();
     }
 }

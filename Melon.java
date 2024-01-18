@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Melon here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Gloriana Zheng
+ * @version January 2024
  */
 public class Melon extends Actor
 {
@@ -23,6 +23,7 @@ public class Melon extends Actor
         
     }
    
+    // When a melon is created, it grows and makes a sound, then dissapears
     private void growDissapear()
     {
         watermelonSound.play();
@@ -37,7 +38,5 @@ public class Melon extends Actor
             getWorld().removeObject(this);
         }
     }
-   
-        
    
 }

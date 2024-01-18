@@ -19,10 +19,8 @@ public class Orange extends Actor
     }
     
     int speed = 200;
-    
-    
 
-    
+    // When 2 oranges touch, it creates a melon
     public void touch()
     {
          if(isTouching(Orange.class))
@@ -34,11 +32,10 @@ public class Orange extends Actor
             setLocation(x, y);
             speed = 0;
             
+            // If the orange gets too close to the top of the screen, it calls game over
             if(y <= 25 )
             {
-                
                 world.gameOver();
-                
             }
             
             while(isTouching(Orange.class))
@@ -48,11 +45,9 @@ public class Orange extends Actor
             
             world.createMelon(x, y);
         
-            
             if(isTouching(Melon.class))
             {
                 removeTouching(Orange.class);
-                
                 
             }
         }
@@ -63,7 +58,6 @@ public class Orange extends Actor
             int y= getY();
             setLocation(x, y);
             speed = 0;
-       
         }
         
     }

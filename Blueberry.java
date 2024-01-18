@@ -25,6 +25,7 @@ public class Blueberry extends Actor
             world.gameOver();
         }
         
+        // Adding boundaries to the world so that the fruit don't leave the boundary
         if(mouseInfo != null)
         {
             int x = mouseInfo.getX();
@@ -69,14 +70,13 @@ public class Blueberry extends Actor
         return speed;
     }
     
-    
+    // If another blueberry is touching a blueberry, then it turns into a strawberry
     public void touch()
     {
         
         if(isTouching(Blueberry.class) && !isTouching(Strawberry.class))
         {
             int touchingBlueberriesCount =  getIntersectingObjects(Blueberry.class).size();
-            
 
             if(touchingBlueberriesCount == 1)
             {
@@ -91,12 +91,12 @@ public class Blueberry extends Actor
                     removeTouching(Blueberry.class);
                 }
                 
-                
                 MyWorld world = (MyWorld) getWorld();
                 world.createStrawberry(x, y + 7);
             }
         }
         
+        // If a strawberry falls ontop a blueberry, it stays on top of the blueberry
         if(isTouching(Strawberry.class))
         {
             int x = getX();
