@@ -39,12 +39,10 @@ public class MyWorld extends World
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
         removeObject(scoreLabel);
         Label scoreLabel = new Label("Score: " + score, 50);
-        addObject(scoreLabel, getWidth()/2, getHeight()/2 + 100);
+        addObject(scoreLabel, getWidth()/2, getHeight()/2 + 70);
         Label reset = new Label("Press space to restart", 50);
-        addObject(reset, getWidth()/2 , getHeight()/2 + 150);
+        addObject(reset, getWidth()/2 , getHeight()/2 + 110);
         gameIsOver = true;
-        
-        
     }
     
     
