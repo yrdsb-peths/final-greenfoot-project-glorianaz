@@ -15,19 +15,18 @@ Restart the game by pressing space. Try not to let the mouse leave the screen ot
 
 
 **Motivation
-Score: Trying to get the highest score possible 
+
+Engaging story: Play the game to save fruitopia so you can get as many watermelons as possible!
+
 Very addicting to play to try to combine the fruits together as well as since the blueberries and strawberries randomize when dropped. 
 
+**Array
+This is used on the Title screen for the watermelon that is dancing. This is in the Watermelon subclass under Actor. 
 
 
 **Features
 Makes a sound every time the user gets a watermelon. 
 
-Score: Score goes up every time the user gets a watermelon
+Score: Score goes up every time the user gets a watermelon and they are trying to get the highest score possible. 
 
-
-
-
-**Array
-This is used on the Title screen for the watermelon that is dancing. This is in the Watermelon subclass under Actor. 
 
