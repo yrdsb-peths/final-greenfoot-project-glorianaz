@@ -35,7 +35,7 @@ public class TitleScreen extends World
     
     private void prepare()
     {
-        Label label1 = new Label("Press Space to Play!", 30);
+        Label label1 = new Label("Press Space to Start!", 30);
         addObject(label1,getWidth()/2, getHeight()/2 - 90);
         Label label2 = new Label("Combine fruits to make as ", 30); 
         Label label3 = new Label("many WATERMELONS", 30);
